@@ -1,0 +1,69 @@
+.singup {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.singup > h1 {
+    padding-bottom: 20px;
+    color: rgba(138, 22, 132, 0.774);
+    font-size: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.signup__register {
+    width: 100px;
+    height: 40px;
+    background-color: rgb(243, 157, 27);
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+    margin-right: 20px !important;
+}
+
+.signup__reset {
+    width: 60px;
+    height: 40px;
+    background-color: rgb(209, 17, 17);
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+
+/* Successfully registered */
+
+.regDone {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 100px;
+    border-radius: 0 0 20px 20px;
+    top: -41px;
+    background-color: rgb(19, 31, 43);
+
+    animation-name: popSucceed;
+    animation-duration: 1s;
+}
+
+.regDone > h1 {
+    color: rgb(43, 226, 134);
+    text-transform: uppercase;
+    font-size: 25px;
+}
+
+@keyframes popSucceed {
+    0% {
+        height: 0px;
+    }
+
+    100% {
+        height: 100px;
+    }
+}

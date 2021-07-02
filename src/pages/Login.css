@@ -1,0 +1,48 @@
+.login__container {
+    position: relative;
+    height: 100vh;
+}
+
+
+.login__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+    background-color: rgba(255, 255, 255, 0.705);
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.login > h1 {
+    padding-bottom: 20px;
+    color: rgba(8, 128, 226, 0.644);
+    font-size: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.login > form > a {
+    text-decoration: none;
+}
+
+.login > form > button {
+    margin-right: 20px;
+}
+
+
+.login__incorrect {
+    display: block;
+    color: red;
+    margin-top: 20px;
+}
