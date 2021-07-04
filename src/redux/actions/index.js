@@ -1,8 +1,17 @@
 import * as actionTypes from './types';
 import sign from '../../apis/sign';
 
-export const register = (formValues) => async dispatch => {
-    const response = await sign.post("/Register", { ...formValues });
+export const register = (formValues, setRegErrors, setRegDone) => async dispatch => {
+    const response = await sign.post("/Register", { ...formValues }).catch((err) => {
+        setRegErrors(err)
+    });
+
+    if(response) {
+        setRegErrors(true)
+        setRegDone(true)
+    } else {
+        return
+    }
 
     dispatch({ type: actionTypes.REGISTRATION, payload: response.data });
 }

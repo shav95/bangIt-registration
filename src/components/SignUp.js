@@ -14,6 +14,7 @@ function SignUp({ register }) {
 
     const history = useHistory();
     const [regDone, setRegDone] = useState(false);
+    const [regErrors, setRegErrors] = useState(false);
 
     const validate = Yup.object().shape({
         userName: Yup.string()
@@ -32,12 +33,11 @@ function SignUp({ register }) {
     })
 
     const onRegisterSubmit = (values) => {
-        register(values);
-        setRegDone(true);
+        register(values, setRegErrors, setRegDone);
     }
 
     const done = () => {
-        if (regDone) {
+        if (regDone && regErrors) {
             setTimeout(() => {
                 return history.push('/login')
             }, 2000)
@@ -49,6 +49,10 @@ function SignUp({ register }) {
         } else {
             return <div></div>;
         }
+    }
+
+    const userNameExist = () => {
+        return regErrors ? <div className="login__userExist">User name has already existed...</div> : <div></div>
     }
 
     return (
@@ -75,6 +79,7 @@ function SignUp({ register }) {
                             </Form>
 
                             {done()}
+                            {userNameExist()}
                         </div>
                     );
                 }
